@@ -2,6 +2,7 @@
 // Solution 1: use the /compat folder in imports
 // import firebase from "firebase/app"; //older version
 import firebase from "firebase/compat/app"; //v9
+import "firebase/auth"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -16,4 +17,10 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_APP_ID
 };
 
-export default firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig)
+
+export const authService = firebase.auth()
+// ko.javascript.info/import-export
+// named export	default export
+// export class User {...}	export default class User {...}
+// import {User} from ...	import User from ...
